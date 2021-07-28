@@ -16,9 +16,7 @@ protocol addInfo
 }
 class SignUpViewController: UIViewController
 {
-    
-//    var id:String?
-       let db = Firestore.firestore()
+    let db = Firestore.firestore()
       var delegate:addInfo?
     @IBOutlet weak var NavigationItem: UINavigationItem!
     @IBOutlet weak var FirstNameTextField: UITextField!
@@ -113,7 +111,7 @@ class SignUpViewController: UIViewController
                 {
                     
                     self.transitionToHome()
-                    self.delegate!.addInfoToDataBase(db: self.db)
+//                    self.delegate!.addInfoToDataBase(db: self.db)
 //                    self.db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName,"uid":result!.user.uid]) { (error) in
 //                        if error != nil{
 //                            self.showError(message: "Error Savin User Data")
@@ -148,5 +146,6 @@ class SignUpViewController: UIViewController
         view.window?.makeKeyAndVisible()
     }
     
+
 }
 

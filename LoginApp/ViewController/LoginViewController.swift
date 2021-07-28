@@ -40,6 +40,8 @@ class LoginViewController: UIViewController, LoginButtonDelegate{
                 self.dismiss(animated: true, completion: nil)
 
             }
+            print(result?.user.displayName?.first)
+            print("result id is #@",result!.user.uid)
       }
     }
     @IBOutlet weak var ErrorLabel: UILabel!

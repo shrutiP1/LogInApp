@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseAuth
 
 struct Constants
 {
@@ -19,4 +21,6 @@ struct Constants
         static let addViewController = "AddVC"
         
     }
+    
+    static let uid = Auth.auth().currentUser?.uid
 }

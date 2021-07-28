@@ -24,6 +24,8 @@
 		D447A1EB269EC4F800BE1272 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D447A1EA269EC4F800BE1272 /* Utilities.swift */; };
 		D447A1ED269EDC9500BE1272 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D447A1EC269EDC9500BE1272 /* GoogleService-Info.plist */; };
 		D447A1EF269F50BC00BE1272 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D447A1EE269F50BC00BE1272 /* Constants.swift */; };
+		D4483D9E26B1178B002B94CB /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4483D9D26B1178B002B94CB /* NoteModel.swift */; };
+		D4483DA326B12933002B94CB /* DataBaseLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4483DA226B12933002B94CB /* DataBaseLayer.swift */; };
 		D449E08B26A7089F0030C378 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D449E08A26A7089F0030C378 /* TableViewCell.swift */; };
 		D449E08D26A746830030C378 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D449E08C26A746830030C378 /* ProfileViewController.swift */; };
 		D44C92B226AC19C200401A0A /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C92B126AC19C200401A0A /* AddViewController.swift */; };
@@ -31,6 +33,7 @@
 		D44C92B726AC232500401A0A /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C92B526AC232500401A0A /* Note+CoreDataProperties.swift */; };
 		D44C92B926AC279D00401A0A /* CustomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44C92B826AC279D00401A0A /* CustomeCollectionViewCell.swift */; };
 		D44F828C26AF1C6000738CF7 /* FireBaseManagament.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44F828B26AF1C6000738CF7 /* FireBaseManagament.swift */; };
+		D44F828E26AF27B400738CF7 /* CoreDataOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44F828D26AF27B400738CF7 /* CoreDataOperation.swift */; };
 		FB8331A84352B3DC8B7A08A2 /* Pods_LoginApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE000422C056856C2ED0141 /* Pods_LoginApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +84,8 @@
 		D447A1EA269EC4F800BE1272 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D447A1EC269EDC9500BE1272 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D447A1EE269F50BC00BE1272 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D4483D9D26B1178B002B94CB /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		D4483DA226B12933002B94CB /* DataBaseLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseLayer.swift; sourceTree = "<group>"; };
 		D449E08A26A7089F0030C378 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		D449E08C26A746830030C378 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D44C92B126AC19C200401A0A /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 		D44C92B526AC232500401A0A /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D44C92B826AC279D00401A0A /* CustomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D44F828B26AF1C6000738CF7 /* FireBaseManagament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseManagament.swift; sourceTree = "<group>"; };
+		D44F828D26AF27B400738CF7 /* CoreDataOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataOperation.swift; sourceTree = "<group>"; };
 		FB3311209117AC7CF8D628E8 /* Pods-LoginAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginAppTests.release.xcconfig"; path = "Target Support Files/Pods-LoginAppTests/Pods-LoginAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +160,9 @@
 		D447A1AB269EA50100BE1272 /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
+				D4483DA126B124CF002B94CB /* Operations */,
+				D4483DA026B1249B002B94CB /* cell */,
+				D4483D9F26B123EA002B94CB /* Model */,
 				D44C92B326AC231000401A0A /* Core Data */,
 				D447A1AC269EA50100BE1272 /* AppDelegate.swift */,
 				D447A1AE269EA50100BE1272 /* SceneDelegate.swift */,
@@ -194,11 +203,8 @@
 				D447A1E2269EA60100BE1272 /* SignUpViewController.swift */,
 				D447A1E4269EA61500BE1272 /* LoginViewController.swift */,
 				D447A1B0269EA50100BE1272 /* ViewController.swift */,
-				D449E08A26A7089F0030C378 /* TableViewCell.swift */,
 				D449E08C26A746830030C378 /* ProfileViewController.swift */,
 				D44C92B126AC19C200401A0A /* AddViewController.swift */,
-				D44C92B826AC279D00401A0A /* CustomeCollectionViewCell.swift */,
-				D44F828B26AF1C6000738CF7 /* FireBaseManagament.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -210,6 +216,33 @@
 				D447A1EE269F50BC00BE1272 /* Constants.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D4483D9F26B123EA002B94CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4483D9D26B1178B002B94CB /* NoteModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D4483DA026B1249B002B94CB /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				D449E08A26A7089F0030C378 /* TableViewCell.swift */,
+				D44C92B826AC279D00401A0A /* CustomeCollectionViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		D4483DA126B124CF002B94CB /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				D44F828B26AF1C6000738CF7 /* FireBaseManagament.swift */,
+				D44F828D26AF27B400738CF7 /* CoreDataOperation.swift */,
+				D4483DA226B12933002B94CB /* DataBaseLayer.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		D44C92B326AC231000401A0A /* Core Data */ = {
@@ -476,12 +509,15 @@
 				D447A1E5269EA61500BE1272 /* LoginViewController.swift in Sources */,
 				D44C92B726AC232500401A0A /* Note+CoreDataProperties.swift in Sources */,
 				D447A1B1269EA50100BE1272 /* ViewController.swift in Sources */,
+				D44F828E26AF27B400738CF7 /* CoreDataOperation.swift in Sources */,
 				D44C92B226AC19C200401A0A /* AddViewController.swift in Sources */,
+				D4483D9E26B1178B002B94CB /* NoteModel.swift in Sources */,
 				D449E08D26A746830030C378 /* ProfileViewController.swift in Sources */,
 				D44F828C26AF1C6000738CF7 /* FireBaseManagament.swift in Sources */,
 				D447A1EB269EC4F800BE1272 /* Utilities.swift in Sources */,
 				D4469FBE26A7DB0C00B1B05D /* LoginApp.xcdatamodeld in Sources */,
 				D449E08B26A7089F0030C378 /* TableViewCell.swift in Sources */,
+				D4483DA326B12933002B94CB /* DataBaseLayer.swift in Sources */,
 				D44C92B626AC232500401A0A /* Note.swift in Sources */,
 				D447A1AD269EA50100BE1272 /* AppDelegate.swift in Sources */,
 				D447A1AF269EA50100BE1272 /* SceneDelegate.swift in Sources */,

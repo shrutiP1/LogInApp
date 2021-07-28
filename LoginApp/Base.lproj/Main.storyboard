@@ -27,7 +27,7 @@
                                         </constraints>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
-                                            <action selector="SignUpTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xLH-x0-YSF"/>
+                                            <action selector="SignUpTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wbe-fP-7cH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjU-FD-1Y6">
@@ -132,7 +132,6 @@
                         <outlet property="ErrorButton" destination="5mc-6h-Khv" id="HzT-QC-uYd"/>
                         <outlet property="FirstNameTextField" destination="QQr-Mg-FVK" id="WMy-xg-4oo"/>
                         <outlet property="LastNameTextField" destination="Gfs-2F-Cbc" id="ZuM-0O-Xum"/>
-                        <outlet property="NavigationItem" destination="DrI-62-3wC" id="L8Z-74-ZjF"/>
                         <outlet property="PassWordTextField" destination="a3o-2J-7bl" id="zrc-No-l3O"/>
                         <outlet property="SignUpButton" destination="pgK-4p-Kkd" id="4pK-A8-wxQ"/>
                     </connections>

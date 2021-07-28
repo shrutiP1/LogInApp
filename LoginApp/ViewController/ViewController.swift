@@ -22,11 +22,7 @@ class ViewController: UIViewController{
         
       // Do any additional setup after loading the view.
     }
-//    @IBAction func didTapNewNote()
-//    {
-//        
-//    }
-//    @IBAction
+
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -67,10 +63,24 @@ class ViewController: UIViewController{
     }
     
     
+    @IBAction func SignUpTap(_ sender: UIButton) {
+        print("In signup tapped function")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+        let sc = storyBoard.instantiateViewController(withIdentifier: "SignupVC") as! SignUpViewController
+        
+        
+        print("......................")
+        
+
+        navigationController?.pushViewController(sc, animated: true)
+    }
+    
     @IBAction func SignUpTapped(_ sender: Any)
     {
-        let sc = storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.signupViewController) as! SignUpViewController
-        navigationController?.pushViewController(sc, animated: true)
+        
+      
+        
         
         
     }

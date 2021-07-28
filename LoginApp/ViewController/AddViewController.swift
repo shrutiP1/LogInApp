@@ -7,29 +7,34 @@
 
 import UIKit
 import CoreData
-protocol addNoteDelegate
-{
-    func addNote(title: String, description: String)
-}
+//protocol addNoteDelegate
+//{
+//    func addNote(title: String, description: String)
+//}
 class AddViewController: UIViewController
 {
     @IBOutlet weak var descTf: UITextView!
     @IBOutlet weak var titleTF: UITextField!
-    var delegate: addNoteDelegate?
-    override func viewDidLoad() {
+     //var delegate: addNoteDelegate?
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "save", style: .plain, target: self, action: #selector(saveButtonTapped))
         
+        
     }
     
     @objc func saveButtonTapped()
-    {
-
-        delegate?.addNote(title: titleTF.text!, description: descTf.text!)
+   {
+//        DataBaseLayer.DBLayerManger.CoreDataManager.saveNote(title: titleTF.text!, description:  descTf.text!)
+        DataBaseLayer.DBLayerManger.writeToFirebase(title: titleTF.text!, description: descTf.text!)
+//        customeLayer.callForCoreData.saveNote(title: titleTF.text!, description:  descTf.text!)
+//        CoreDataOperation.callForCoreData.saveNote(title: titleTF.text!, description: descTf.text!)
+       
+//        delegate?.addNote(title: titleTF.text!, description: descTf.text!)
         
-        
-        navigationController?.popViewController(animated: true)
+       navigationController?.popViewController(animated: true)
         
     }
     

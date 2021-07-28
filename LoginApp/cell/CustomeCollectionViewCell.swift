@@ -13,15 +13,34 @@ class CustomeCollectionViewCell: UICollectionViewCell
     static let identifier = "CustomeCollectionViewCell"
     public let labell = UILabel()
     public let label2 = UILabel()
+    
+    
     override init(frame: CGRect)
     {
         super.init(frame: frame)
         contentView.backgroundColor = UIColor.white
-       contentView.addSubview(labell)
-      contentView.addSubview(label2)
+        contentView.addSubview(labell)
+        contentView.addSubview(label2)
         contentView.clipsToBounds = true
+        
+        layer.cornerRadius = frame.width/2
+        contentView.layer.cornerRadius = 20
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.borderColor = UIColor.black.cgColor
+        contentView.layer.masksToBounds = true
+         backgroundColor = UIColor.white
+         layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        layer.shadowRadius = 2.0
+        layer.shadowOpacity = 1.0
+        layer.masksToBounds = false
+        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
+
+
+        //Mark: - constraint for label
+
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
