@@ -18,7 +18,7 @@ class LoginViewController: UIViewController, LoginButtonDelegate{
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var LoginButton: UIButton!
     
-   
+    
     @IBAction func LoginButtonTapped(_ sender: Any)
     {
         print("***************************")
@@ -38,16 +38,18 @@ class LoginViewController: UIViewController, LoginButtonDelegate{
             else
             {
                 self.dismiss(animated: true, completion: nil)
-
+                
             }
-      }
+            
+            
+        }
     }
     @IBOutlet weak var ErrorLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElement()
-            btn_facebook.permissions = ["public_profile", "email"]
-            btn_facebook.delegate = self
+        btn_facebook.permissions = ["public_profile", "email"]
+        btn_facebook.delegate = self
         
         
     }
@@ -59,8 +61,8 @@ class LoginViewController: UIViewController, LoginButtonDelegate{
         Utilities.styleTestField(textfield: PasswordTextField)
         Utilities.stylefilledButton(_button: LoginButton)
     }
-
-        
+    
+    
     func vallidateDetails()->String?
     {
         if(EmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "") || (PasswordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "")
@@ -73,10 +75,10 @@ class LoginViewController: UIViewController, LoginButtonDelegate{
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?)
     {
         let homeViewController = self.storyboard?.instantiateViewController(withIdentifier: Constants.StoryBoard.homeViewController) as? HomeViewController
-
-         view.window?.rootViewController = homeViewController
-         view.window?.makeKeyAndVisible()
-
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+        
         print("you logged in")
         
     }
@@ -86,9 +88,9 @@ class LoginViewController: UIViewController, LoginButtonDelegate{
     {
         print("you logged out")
     }
-        
     
-
+    
+    
     
     
 }
