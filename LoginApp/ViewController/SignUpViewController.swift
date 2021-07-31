@@ -9,17 +9,10 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 import Firebase
-protocol addInfo
-{
-    func addInfoToDataBase(db: Firestore)
-    
-}
+
 class SignUpViewController: UIViewController
 {
-    
-//    var id:String?
-       let db = Firestore.firestore()
-      var delegate:addInfo?
+    let db = Firestore.firestore()
     @IBOutlet weak var NavigationItem: UINavigationItem!
     @IBOutlet weak var FirstNameTextField: UITextField!
     @IBOutlet weak var LastNameTextField: UITextField!
@@ -36,7 +29,7 @@ class SignUpViewController: UIViewController
         setUpElements()
         ErrorButton.numberOfLines = 3
         ErrorButton.lineBreakMode = .byWordWrapping
-            
+        
     }
     func application(_application: UIApplication,didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey:Any]?)->Bool
     {
@@ -46,7 +39,7 @@ class SignUpViewController: UIViewController
         UINavigationBar.appearance().isTranslucent = true
         return true
     }
-
+    
     func setUpElements()
     {
         //NavigationItem.backBarButtonItem = .none
@@ -59,36 +52,36 @@ class SignUpViewController: UIViewController
         
     }
     
-   func vallidateFields() -> String?
-   {
-     //check that all fields fields in
-    if FirstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines ) == "" || (LastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "") || (EmailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "") || (PassWordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "")
+    func vallidateFields() -> String?
     {
+        //check that all fields fields in
+        if FirstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines ) == "" || (LastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "") || (EmailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "") || (PassWordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "")
+        {
+            
+            return "Please Fill In all Fields"
+        }
+        //Check if email is in correct formate
         
-        return "Please Fill In all Fields"
+        let cleanedEmil = EmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if(Utilities.isEmailVallid(Email: cleanedEmil) == false)
+        {
+            return "Please Enter vallid Email-id"
+        }
+        //check if password is secure
+        let cleanedPassword = PassWordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if(Utilities.isPasswordVallid(_password: cleanedPassword) == false)
+        {
+            return "Please Make Sure your password is at least 8 character , contains a special character and a number "
+        }
+        
+        return nil
     }
-    //Check if email is in correct formate
-    
-    let cleanedEmil = EmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-    
-    if(Utilities.isEmailVallid(Email: cleanedEmil) == false)
-    {
-        return "Please Enter vallid Email-id"
-    }
-    //check if password is secure
-    let cleanedPassword = PassWordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-    if(Utilities.isPasswordVallid(_password: cleanedPassword) == false)
-    {
-        return "Please Make Sure your password is at least 8 character , contains a special character and a number "
-    }
-     
-     return nil
-   }
     @IBAction func SignUpTapped(_ sender: Any)
     {
         //vallidate the fields
-       let error = vallidateFields()
-
+        let error = vallidateFields()
+        
         if error != nil
         {
             showError(message: error!)
@@ -97,8 +90,7 @@ class SignUpViewController: UIViewController
         {
             //create cleaned version of the data
             
-            let firstName = FirstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lastName = LastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
             let email = EmailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = PassWordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
@@ -107,31 +99,19 @@ class SignUpViewController: UIViewController
                 //check for errors
                 if err != nil
                 {
-                   self.showError(message: "Error creating user")
+                    self.showError(message: "Error creating user")
                 }
                 else
                 {
                     
                     self.transitionToHome()
-                    self.delegate!.addInfoToDataBase(db: self.db)
-//                    self.db.collection("users").addDocument(data: ["firstName":firstName, "lastName":lastName,"uid":result!.user.uid]) { (error) in
-//                        if error != nil{
-//                            self.showError(message: "Error Savin User Data")
-//                        }
-//                        else
-//                        {
-//                            //transition to home screen
-//                            self.transitionToHome()
-//
-//                        }
-//                    }
-                     
+                    
                 }
             }
             
         }
     }
- 
+    
     
     func showError(message:String)
     {
@@ -147,6 +127,7 @@ class SignUpViewController: UIViewController
         view.window?.rootViewController = loginViewController
         view.window?.makeKeyAndVisible()
     }
+    
     
 }
 
